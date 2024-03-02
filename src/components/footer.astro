@@ -1,0 +1,28 @@
+---
+import Social from "./social.astro";
+const platform = "github";
+const username = "rudycancax";
+---
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"
+></script>
+
+<footer
+  class="w-full bg-violet-950 text-white font-bold text-center p-4 rounded-lg mt-4"
+>
+  <p>
+    Learn more about my projects on <a
+      href={`https://www.${platform}.com/${username}`}>{platform}</a
+    >!
+  </p>
+
+  <Social {platform} {username} />
+  <Social platform="youtube" username="@rcancax6167" />
+</footer>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    feather.replace();
+  });
+</script>

@@ -1,5 +1,8 @@
 ---
-import Header from "./../components/header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+// import Header from "../components/header.astro";
+// import Footer from "./../components/footer.astro";
+// import "../styles/global.css";
 
 const pageTitle = "About Me";
 
@@ -15,41 +18,64 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "#42a5f5";
+const fontWeigth = "bold";
+const textCase = "uppercase";
 ---
 
-<Header />
-<section class="h-full w-full bg-purple-50 flex items-center justify-center">
-  About page
-</section>
+<BaseLayout pageTitle="ABOUT 🤔">
+  <slot>
+    <h1 class="h-full w-full bg-purple-50 flex items-center justify-center">
+      About page
+    </h1>
 
-<p>Here are a few facts about me:</p>
-<ul>
-  <li>My name is {identity.firstName}.</li>
-  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {
-    identity.hobbies.length >= 2 && (
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
       <li>
-        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        I live in {identity.country} and I work as a {identity.occupation}.
       </li>
-    )
-  }
-</ul>
-<p>My skills are:</p>
-<ul>
-  {skills.map((skill) => <li class="font-bold">{skill}</li>)}
-</ul>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
 
-<hr />
-<hr />
+    <hr />
+    <hr />
 
-{!happy ? <p>I am happy to be learning Astro!</p> : <h1>whaat</h1>}
+    {happy && <p>I am happy to be learning Astro!</p>}
 
-{finished && <p>I finished this tutorial!</p>}
+    {finished && <p>I finished this tutorial!</p>}
 
-{
-  goal === 3 ? (
-    <p>My goal is to finish in 3 days.</p>
-  ) : (
-    <p>My goal is not 3 days.</p>
-  )
-}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+
+    <style define:vars={{ skillColor, fontWeigth, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeigth);
+        text-transform: var(--textCase);
+      }
+    </style>
+  </slot>
+</BaseLayout>

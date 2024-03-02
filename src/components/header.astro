@@ -1,23 +1,11 @@
 ---
-
+import Navigation from "./navigation.astro";
+import Hamburger from "./Hamburger.astro";
 ---
 
-<i data-feather="home"></i>
-<nav class="w-full h-fit text-center py-4 bg-purple-200">
-  <a
-    href="/"
-    class="text-lg text-white font-bold px-4 py-2 bg-purple-500 hover:bg-purple-900 rounded-lg"
-  >
-    Home</a
-  >
-  <a
-    href="/about/"
-    class="text-lg text-white font-bold px-4 py-2 bg-purple-500 hover:bg-purple-900 rounded-lg"
-    >About</a
-  >
-  <a
-    href="/blog/"
-    class="text-lg text-white font-bold px-4 py-2 bg-purple-500 hover:bg-purple-900 rounded-lg"
-    >Blog</a
-  >
-</nav>
+<header>
+  <nav>
+    <!-- <Hamburger /> -->
+    <Navigation />
+  </nav>
+</header>

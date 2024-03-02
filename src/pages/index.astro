@@ -1,26 +1,7 @@
 ---
-import Header from "./../components/header.astro";
+import BaseLayout from "./../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <base href="/astro-blog/" />
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"
-    ></script>
-  </head>
-  <body>
-    <Header />
-    <h1>My Astro Site</h1>
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        feather.replace();
-      });
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle="Index ASTRO">
+  <h1>HOME PAGE LAYOUT USING <strong>slot</strong> tag</h1>
+</BaseLayout>
