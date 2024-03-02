@@ -1,0 +1,1 @@
+import"https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js";document.querySelector(".hamburger").addEventListener("click",()=>{document.querySelector(".nav-links").classList.toggle("expanded")});window.addEventListener("DOMContentLoaded",()=>{feather.replace()});window.addEventListener("DOMContentLoaded",()=>{feather.replace()});
