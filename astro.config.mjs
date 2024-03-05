@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
+
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
   outDir: './docs',
-  integrations: [tailwind()],
+  integrations: [tailwind(), preact()],
   site: "https://astro-hw.pages.dev/"
 });

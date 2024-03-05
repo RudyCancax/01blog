@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "./../layouts/BaseLayout.astro";
+import Greeting from "./../components/greetings_preact/Greeting";
 ---
 
 <BaseLayout pageTitle="Index ASTRO">
   <h1>HOME PAGE LAYOUT USING <strong>slot</strong> tag</h1>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>

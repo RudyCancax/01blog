@@ -1,10 +1,9 @@
 html {
-  @apply bg-[#0d0d1d];
+  background-color: #f1f5f9;
   font-family: sans-serif;
 }
 
 body {
-  @apply text-white;
   margin: 0 auto;
   width: 100%;
   max-width: 90ch;
@@ -86,4 +85,13 @@ h1 {
 
 .menu-button{
   @apply text-lg text-white font-bold px-4 py-2 bg-purple-500 hover:bg-purple-900 rounded-lg;
+}
+
+html.dark {
+  background-color: #0d0d1d;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
