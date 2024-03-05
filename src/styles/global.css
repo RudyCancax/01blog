@@ -1,9 +1,10 @@
 html {
-  background-color: #f1f5f9;
+  @apply bg-[#0d0d1d];
   font-family: sans-serif;
 }
 
 body {
+  @apply text-white;
   margin: 0 auto;
   width: 100%;
   max-width: 90ch;

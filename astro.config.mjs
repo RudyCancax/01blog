@@ -6,4 +6,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   outDir: './docs',
   integrations: [tailwind()],
+  site: "https://astro-hw.pages.dev/"
 });

@@ -2,6 +2,12 @@
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const tags = frontmatter.tags;
+const fullTagsURL = tags.map((tag: any) => {
+  return { url: "/tags/".concat(tag), tag: tag };
+});
 ---
 
 <BaseLayout pageTitle="frontmatter.title">
@@ -11,5 +17,23 @@ const { frontmatter } = Astro.props;
   <p>Published on: {frontmatter.title}</p>
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>Published on: {frontmatter.description}</p>
+  <img
+    src={frontmatter.image.url}
+    width="300"
+    alt={frontmatter.image.alt}
+    class="mx-auto mt-4 rounded-lg"
+  />
+
+  <div
+    class="text-center w-fit grid grid-cols-4 items-center justify-center my-8 mx-auto"
+  >
+    {
+      fullTagsURL.map((tag: any) => (
+        <p class="border text-[#00539F] m-1 border-dotted border-[#a1a1a1] rounded-lg px-4 py-2 text-lg bg-[#F8FCFD]">
+          <a href={tag.url}>{tag.tag}</a>
+        </p>
+      ))
+    }
+  </div>
   <slot />
 </BaseLayout>
